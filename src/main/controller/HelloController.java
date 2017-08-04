@@ -29,9 +29,9 @@ public class HelloController{
         // 创建准备返回的ModelAndView对象，该对象通常包含了返回视图的路径、模型的名称以及模型对象
         ModelAndView mv = new ModelAndView();
         //添加模型数据 可以是任意的POJO对象
-        mv.addObject("message", "Hello World and Spring!");
+        mv.addObject("message", "Hello World using Spring!");
         // 设置逻辑视图名，视图解析器会根据该名字解析到具体的视图页面
-        mv.setViewName("/WEB-INF/content/welcome.jsp");
+        mv.setViewName("welcome");
         // 返回ModelAndView对象。
         return mv;
     }

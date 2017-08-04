@@ -7,6 +7,6 @@
     <title>welcome</title>
 </head>
 <body>
-${requestScope.message}
+<h2>${requestScope.message}</h2>
 </body>
 </html>
