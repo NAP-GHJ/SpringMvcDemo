@@ -8,5 +8,6 @@
 </head>
 <body>
 <h2>${requestScope.message}</h2>
+<h2>${requestScope.user}</h2>
 </body>
 </html>

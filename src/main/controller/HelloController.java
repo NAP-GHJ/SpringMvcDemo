@@ -1,8 +1,12 @@
 package main.controller;
 
+import main.domain.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -35,5 +39,24 @@ public class HelloController{
         // 返回ModelAndView对象。
         return mv;
     }
+
+    @ModelAttribute
+    public void userModel(Model model){
+        User user = new User();
+        user.setLoginname("葛红军");
+        user.setPassword("ghj");
+        model.addAttribute("user",user);
+    }
+
+    @RequestMapping(value = "/testuser")
+    public ModelAndView login(ModelMap modelMap){
+        ModelAndView mv = new ModelAndView();
+        User user = (User)modelMap.get("user");
+        System.out.println(user);
+        mv.addObject("user",user);
+        mv.setViewName("welcome");
+        return mv;
+    }
+
 
 }

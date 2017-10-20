@@ -4,12 +4,8 @@ import java.io.Serializable;
 
 public class User implements Serializable{
 
-    //private value field
     private String loginname;
     private String password;
-
-
-
     private String username;
 
     public User(){
@@ -47,5 +43,12 @@ public class User implements Serializable{
         this.username = username;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "loginname='" + loginname + '\'' +
+                ", password='" + password + '\'' +
+                ", username='" + username + '\'' +
+                '}';
+    }
 }
